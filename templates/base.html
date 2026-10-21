@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Tohफा Hamper</title>
+
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'images/a.jpg' %}" rel="icon">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+    <style>
+        .header
+        {
+        min-height:80px;
+        text-align:center;
+        border-top:5px solid #fb8c00 ;
+        }
+        .ic
+        {
+        color:#fb8c00;
+       font-size:25px;
+        height:25px;
+        width:25px;
+        padding:3px;
+        margin-left:10px;
+        }
+        .icf
+        {
+        color:#fb8c00;
+        border:1px solid black;
+        border-radius:5px;
+        height:25px;
+        width:25px;
+        padding:4px;
+
+        }
+        .ic:hover
+        {
+        color:white;
+        transition:all ease 1s;
+        transform:rotate(360deg);
+        }
+        .menu
+        {
+        min-height:45px;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        #menu ul li a:hover
+        {
+        color:#fb8c00;
+        transition:all ease 1s;
+        }
+        .category
+        {
+        min-height:200px;
+        }
+        .newproduct
+        {
+        min-height:500px;
+        background:#fb8c00;
+        }
+        .services
+        {
+        min-height:500px;
+        }
+        .ufooter
+        {
+        min-height:300px;
+        background:grey;
+        }
+        .bfooter
+        {
+        min-height:45px;
+        background:#fb8c00;
+        margin-top:1px;
+        }
+        .ifont
+        {
+        font-size:20px;
+        color:#00fefe;
+        }
+        .offer
+        {
+        min-height:400px;
+
+        }
+        #ufooterli a
+        {
+        color:white;
+        text-decoration:none;
+        width:300px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid outer">
+    <div class="row header bg-light">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4 py-2 fs-1">
+                    <b style="color:#fb8c00 ">The</b> <b style="color:green;">Tohफा</b> <b style="color:cream;">Hamper</b><b
+                        style="color:orange;"></b><i class="fa fa-cart-plus"></i>
+                </div>
+                <div class="col-sm-4 fs-4 pt-4"> Welcome to The Tohफा Hamper.</div>
+                <div class="col-sm-3 pt-4 py-4">
+                    <a href="tel:7084936584" class=" fa fa-spin"><i class="fa fa-phone ic" style="color:black;"> </i>
+                    </a>
+                    <a class="fa fa-facebook ic" href="" style="color:#214689;"></a>
+                    <a class="fa fa-twitter ic" href="" style="color:#01b4fe;"></a>
+                    <a class="fa fa-youtube ic" href="https://youtube.com/channel/UCHSL93UJEIDox9OGMeCMLsg"
+                       style="color:#e11c21;"></a>
+                    <a href='https://wa.me/7084936584'><i class="fa fa-whatsapp ic" style="color:#28ac3b"></i></a>
+                    <a class="fa fa-instagram ic" fa
+                       fa-instagram href="https://www.instagram.com/shiv_am0118/" style="color:#7e1d84;><i class="
+                       aria-hidden="true"></i></a>
+
+
+                </div>
+                <div class="col-sm-1 pt-3">
+                    <a href="/user/cart/">
+                        <b class="btn btn-outline-danger">
+                            <i class="fa fa-shopping-cart"></i> {{noofitemsincart}}
+                        </b>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row menu bg-dark sticky-top " style="height:75px;">
+        <!--  start menu --->
+        <div class="col-sm-12 p-2">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="padding-left:8%;">
+                    <nav class="navbar navbar-expand-lg navbar-light " id="menu">
+                        <div class="container-fluid">
+
+                            <button aria-controls="navbarNavDropdown" aria-expanded="false"
+                                    aria-label="Toggle navigation"
+                                    class="navbar-toggler" data-bs-target="#navbarNavDropdown"
+                                    data-bs-toggle="collapse" type="button">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a aria-current="page" class="nav-link active" href="/user/home/"><i
+                                                class="fa fa-home ifont"></i> Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/product/"><i aria-hidden="true"
+                                                                                     class="fa fa-product-hunt ifont"></i>
+                                            products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/myorders/"><i aria-hidden="true"
+                                                                                      class="fa fa-shopping-bag ifont"></i>
+                                            Order</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/about/"><i aria-hidden="true"
+                                                                                   class="fa fa-info ifont"></i> About
+                                            Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/contactus"><i aria-hidden="true"
+                                                                                      class="fa fa-map-marker ifont"></i>
+                                            Contact Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/myprofile/"> <i aria-hidden="true"
+                                                                                        class="fa fa-user ifont"></i> My
+                                            Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/signup"><i aria-hidden="true"
+                                                                                   class="fa fa-sign-in ifont"></i>
+                                            Sign Up</a>
+                                    </li>
+                                    {% if request.session.userid %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/logout/"><i class="fa fa-sign-out ifont"
+                                                                                    aria-hidden="true"></i> logout</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">{{request.session.userid}}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/admin/">
+                                            <i class="fa fa-unlock-alt text-danger" aria-hidden="true"></i>
+                                            Admin</a>
+                                    </li>
+
+                                    {% else %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/signin/"><i aria-hidden="true"
+                                                                                    class="fa fa-user-plus ifont"></i>
+                                            Sign in</a>
+                                    </li>
+
+
+                                    {% endif %}
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+        <!--  end menu --->
+    </div>
+    <div class="row content " style="min-height:550px;">
+        <div class="col-sm-12 bg-light " style="min-height:300px; ">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <div class="row ">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 my-5 offer bg-light p-5">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <b>01</b>
+                        <div class="fs-2"> Sapphire Craystal</div>
+                        <p>Ace your assignments (and freelance work) with the ultimate, all-in-one creative subscriptio
+                            Ace your assignments (and freelance work) with the ultimate, all-in-one creative
+                            subscriptio</p>
+                        <b>02</b>
+                        <div class="fs-2 mt-3"> Swis Ronda Movement</div>
+                        <p>Ace your assignments (and freelance work) with the ultimate, all-in-one creative subscriptio
+                            Ace your assignments (and freelance work) with the ultimate, all-in-one creative
+                            subscriptio</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <center>
+                            <img class="img-fluid " src="{% static 'images/a.jpg' %}" style="max-height:400px;"/>
+                        </center>
+                    </div>
+                    <div class="col-sm-4">
+                        <b>03</b>
+                        <div class="fs-2"> Sapphire Craystal</div>
+                        <p>Ace your assignments (and freelance work) with the ultimate, all-in-one creative subscriptio
+                            Ace your assignments (and freelance work) with the ultimate, all-in-one creative
+                            subscriptio</p>
+                        <b>04</b>
+                        <div class="fs-2 mt-3"> Swis Ronda Movement</div>
+                        <p>Ace your assignments (and freelance work) with the ultimate, all-in-one creative subscriptio
+                            Ace your assignments (and freelance work) with the ultimate, all-in-one creative
+                            subscriptio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row services">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5  " style="text-align:justify; padding:100px;word-spacing:5px; ">
+                <h1 style="font-family:Wide Oblique;"> quartz</h1>
+                <p>The cheaper alternative is a quartz watch, which uses batteries and electrical wizardry to keep time.
+                    You will still find quartz movements in some good quality luxury watches, but the general rule is
+                    that the most expensive watches are mechanical. Quartz is very accurate, it’s just not just not as
+                    classy. Quartz watches ‘tick’ from second to second, whereas mechanical watches move smoothly.</p>
+            </div>
+            <div class="col-sm-5">
+                <img class="img-fluid " src="{% static 'images/service.jpg' %}" style="max-height:400px;"/>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <div class="row ufooter">
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-10 ">
+                <div class="row">
+                    <div class="col-sm-4  ps-5 pt-5">
+                        <b style="color:white; font-size:25px;">Get to Know Us</b>
+                        <ul class="nav flex-column " id="ufooterli">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/user/about/">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link ">Easycart Cares</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ">Gift a Smile</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4  ps-5 pt-5 ">
+                        <b style="color:white; font-size:25px;">Through Social Network</b>
+                        <ul class="nav flex-column " id="ufooterli">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"> <i class="fa fa-facebook icf "
+                                                                        style="color:#214689;"></i> Facebook</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"> <i class="fa fa-twitter icf" style="color:#01b4fe;"></i>
+                                    Twitter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.instagram.com/shiv_am0118/"><i
+                                        class="fa fa-instagram icf" style="color:#c70f1a;"> </i> Instagram</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tel:7084936584"><i
+                                        class="fa fa-phone icf" style="color:black"> </i> Contact</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href='https://wa.me/7084936584'><i
+                                        class="fa fa-whatsapp icf" style=color:#28ac3b;"> </i> WhatsApp</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4  ps-5 pt-5">
+                        <b style="color:white; font-size:25px;">Let Us Help You</b>
+                        <ul class="nav flex-column " id="ufooterli">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">COVID-19 and Easycart
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Your Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Returns Centre</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ">100% Purchase Protection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 "></div>
+        </div>
+
+        <div class="row bfooter text-light text-center py-2">
+            <div class="col-sm-6">Developed By :~ The Tohfa Hamper</div>
+            <div class="col-sm-6"> &copy; The Tohफा Hamper | Gifts & Hampers.</div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+

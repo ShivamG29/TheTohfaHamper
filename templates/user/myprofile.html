@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="h2 text-center">My <b class="text-warning">Profile<i class="fa fa -users"></i></b></div>
+
+            <div class="col-sm-12">
+                {% if profile %}
+                {% for x in profile %}
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/{{x.ppic}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.name}}</h5>
+                                <p class="card-text">
+                                <p>
+                                    <b> MOBILE </b> {{x.mobile}}
+                                <p>
+                                    <b> EMAIL: </b> {{x.email}}
+                                <p>
+                                    <b> PASSWORD: </b> {{x.passwd}}
+                                <p>
+                                    <b> ADDRESS: </b> {{x.address}}
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+            </div>
+            <div class="col-sm-12">
+
+                     <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <b style="font-family:Italic;font-size:20px;">Name :-</b><input type="text" name="name" required class="form-control bt" placeholder="Enter Your Name..."/>
+            <b style="font-family:Italic;font-size:20px;">Mobile :-</b><input type="number" name="mobile" required class="form-control bt"
+                         placeholder="Enter Your MobileNo..."/>
+            <b style="font-family:Italic;font-size:20px;">Password :-</b><input type="password" name="passwd" required class="form-control bt" placeholder="Enter Your password..."/>
+            <b style="font-family:Italic;font-size:20px;">Profile :-</b><input type="file" name="fu" required class="form-control bt"/>
+            <b style="font-family:Italic;font-size:20px;">Address :-</b>
+            <textarea class="form-control txta bt" name="address" placeholder="Enter Your Massege..." required
+                      style="min-height:80px; resize:none;"></textarea>
+            <center><input type="submit" value="save" class="btn btn-info bt w-25 m-3"style=" border:1px solid black;box-shadow:0px 2px 0px rgba(0,0,0,0.5);font-family:Italic;/></center>
+
+        </form>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

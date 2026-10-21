@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+    .form-control
+    {margin-bottom:8px;}
+
+</style>
+{% block content %}
+<div id="box" style="background:red; height:550px;">
+    <div style="background-image: url({% static 'images/wawal1.jpg' %}); height:550px;">
+    <div class="row contact">
+    <div class="h2 text-center " style="transform:translateY(25px);color:grey;">Contact <b class="text-info">Us <i class="fa fa-phone"></i></b></div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8 mt-5" style="min-height:400px;background:grey;border-radius:55px 0px 55px 0px;">
+    <div class="row">
+        <div class="col-sm-5 p-4">
+            <form method="post">
+                {% csrf_token %} <!--cross site refoegery-->
+                {% if S %}
+               <div class="alert alert-warning">
+                    Thanks for enquiry...
+               </div>
+                {% endif %}
+               <b style="font-family:Italic;font-size:20px;">Name</b><input type="text" name="name" required class="form-control" placeholder="Enter Your Name..."/>
+                <b style="font-family:Italic;font-size:20px;">Mobile</b><input type="number" name="mobile" required class="form-control" placeholder="Enter Your MobileNo..."/>
+                <b style="font-family:Italic;font-size:20px;">Email</b><input type="email" name="email" required class="form-control" placeholder="Enter Your email..."/>
+               <b style="font-family:Italic;font-size:20px;">Message</b>
+                <textarea class="form-control txta" name="msg" placeholder="Enter Your Massege..." required style="min-height:80px; resize:none;"></textarea>
+                <input type="submit" value="save" class="btn btn-info form-control mt-3 "/>
+            </form>
+        </div>
+        <div class="col-sm-7 pt-2 pb-2">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.4681482706796!2d81.77860962921596!3d27.03419159894224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39998dc2c96ac6a9%3A0xea88b9480322d475!2sShivam%20Provision%20store%20and%20beaker&#39;s!5e0!3m2!1sen!2sin!4v1632761975881!5m2!1sen!2sin" width="560px" height="100%" style="border:0; border-radius:5px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+<div class="col-sm-2"></div>
+</div>
+        </div>
+</div>
+{% endblock %}

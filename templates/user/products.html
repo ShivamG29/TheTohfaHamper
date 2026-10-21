@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row mt-3 " style="min-height:200px;">
+    <div class="h2 text-center"><b><u>Products</u></b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="list-group">
+                    <li class="list-group-item active" aria-current="true">Our Brands</li>
+                    {% if cat %}
+                    {% for x in cat %}
+                    <a href="/user/product?abc={{x.id}}"><li class="list-group-item">{{x.cname}}</li></a>
+                    {% endfor %}
+                    {% endif %}
+                    <a href="/user/product/"><li class="list-group-item">All Brands</li></a>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    {% if products %}
+                    {% for x in products %}
+                    <div class="col-sm-4   ">
+                        <div class="card w-100 mb-2" style=" border:2px solid grey;">
+                            <img src="/{{x.ppic}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.category}}</h5>
+                                <p class="fs-3">{{x.name}}</p>
+                                <div style="height:30px; width:30px; border-radius:3px; background:{{x.color}}"></div>
+                                <b>Rs. </b><span class=" btn btn-outline-success m-2 "><s>{{x.tprice}}/-</s></span><b
+                                    class="btn btn-outline-info">{{x.disprice}}/-</b><br/>
+                                <b> Product For </b> : Kids<br><br>
+                               <div style="padding-left:80px; padding-top:20px"> <a href="/user/viewdetails?msg={{x.id}}" class="btn btn-warning ">Buy Now</a>
+                                               <a href="/user/process?pid={{x.id}}&bn=cart" target="_blank" class="btn btn-warning"><i class="fa fa-shopping-cart"></i> Cart</a>
+
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

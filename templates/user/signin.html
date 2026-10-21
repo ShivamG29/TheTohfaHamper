@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+<style>
+    .form-control
+    {
+    border:1px solid black;
+    box-shadow:0px 2px 0px rgba(0,0,0,0.5);
+    }
+    .bt:hover
+    {
+    background:rgba(0,0,0,0.5);
+    color:white;
+    }
+</style>
+
+<div class="row py-3 " style="height:400px; background:url({% static 'images/dw7.jpg' %})">
+    <center>
+        <div class="h2 text-light">Sign <b class="text-warning"> in </b> <i class="fa fa-sign-in"></i></div>
+    </center>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 p-5 mb-5 " style="background:rgba(248,249,250,.2); border-radius:0px 50px 0px 50px;border:1px solid yellow;">
+        <form method="post">
+            {% csrf_token %}
+
+
+            <b style="font-family:Italic;font-size:20px;">Email Id.</b><input type="email" name="email" required class="form-control bt " placeholder="Enter Your email..."/>
+            <b style="font-family:Italic;font-size:20px;">Password</b><input type="password" name="password" required class="form-control bt"
+                           placeholder="Enter Your password..."/>
+
+            <center><input type="submit" value="Login" class="btn btn-info bt w-25 m-3"/></center>
+
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{% endblock %}

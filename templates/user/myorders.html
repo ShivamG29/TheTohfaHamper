@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+<div class="row">
+    <h2 class="text-center py-3"><b style="color:rgba(184,97,232,0.9);letter-spacing:1px;font-size:35px;">Cart</b> Item<i class="fa fa-shopping-cart "></i> </h2>
+    <div class="col-sm-12">
+<table class="table table-stripted">
+    <tr>
+    <th>Product Id</th>
+    <th>Picture</th>
+    <th>Product Name</th>
+    <th>product Cat</th>
+    <th>Description</th>
+    <th>Total Price</th>
+    <th>Discount Price</th>
+    <th>Cancel</th>
+    <th>Remarks</th>
+    <th>Date</th>
+    </tr>
+   {% if pendingorder %}
+   {% for x in pendingorder %}
+     <tr>
+        <td>{{x.1}}</td>
+        <td><img src="/{{x.8}}" class="image-thumbnail" style="max-height:100px;"/> </td>
+        <td>{{x.7}}</td>
+        <td>{{x.11}}</td>
+        <td>{{x.12}}</td>
+        <td><i class="btn btn-outline-danger"><s>{{x.9}}</s></i></td>
+        <td><i class="btn btn-outline-success">{{x.10}}</i></td>
+
+
+        <td><a href="/user/myorders?oid={{x.0}}" class="btn btn-danger">Cancel</a></td>
+         <td><a href="#" class="btn btn-warning">{{x.3}}</a></td>
+            <td>{{x.5}}</td>
+    </tr>
+    {% endfor %}
+   {% endif %}
+</table>
+    </div>
+</div>
+{% endblock %}
